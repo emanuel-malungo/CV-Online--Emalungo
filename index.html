@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" class="font-outfit">
+<html lang="pt" data-theme="light" class="font-outfit scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -11,235 +11,545 @@
     <!-- CDN REMIXICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <title>Emalungo | CV online</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
+
+    <title>Emanuel Malungo | Desenvolvedor Web</title>
 </head>
 
-<body class="bg-white dark:bg-[#141520] text-black dark:text-white">
+<body class="bg-white dark:bg-[#0f0f23] text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-    <main class="container mx-auto">
+    <!-- Header Navigation (Desktop) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0f0f23]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 hidden md:block">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-[#6f5cae] to-[#8b7cb8] rounded-lg"></div>
+                    <span class="text-xl font-bold text-[#6f5cae]">Emanuel Malungo</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-sm font-medium hover:text-[#6f5cae] transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-sm font-medium hover:text-[#6f5cae] transition-colors">Sobre</a>
+                    <a href="#experience" class="nav-link text-sm font-medium hover:text-[#6f5cae] transition-colors">Experiência</a>
+                    <a href="#skills" class="nav-link text-sm font-medium hover:text-[#6f5cae] transition-colors">Habilidades</a>
+                    <a href="#contact" class="nav-link text-sm font-medium hover:text-[#6f5cae] transition-colors">Contato</a>
+                    
+                    <!-- Theme Toggle Desktop -->
+                    <button id="toggle-theme-desktop" 
+                        class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="ri-moon-line dark:ri-sun-line text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto pt-20 md:pt-24">
         <!-- SEÇÃO 1: Perfil com imagem -->
-        <section
-            class="grid grid-cols-1 lg:[grid-template-columns:1fr_2fr] gap-12 py-20 px-6 items-start max-w-6xl mx-auto mt-12">
+        <section id="home" 
+            class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 py-12 lg:py-20 px-4 lg:px-6 items-center max-w-7xl mx-auto">
             <!-- Imagem ou avatar -->
-            <div
-                class="h-[300px] sm:h-[400px] rounded-2xl w-full bg-[#6f5cae] shadow-lg flex items-center justify-center">
-                <span class="text-white text-xl">[Sua imagem]</span>
+            <div class="relative group">
+                <div class="h-[280px] sm:h-[350px] lg:h-[400px] rounded-2xl w-full bg-gradient-to-br from-[#6f5cae] to-[#8b7cb8] shadow-xl flex items-center justify-center overflow-hidden group-hover:shadow-2xl transition-all duration-300">
+                    <div class="text-center text-white">
+                        <i class="ri-user-line text-6xl mb-4 opacity-80"></i>
+                        <span class="text-lg font-medium">[Sua imagem]</span>
+                    </div>
+                    <!-- Overlay decorativo -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <!-- Badge flutuante -->
+                <div class="absolute -bottom-4 left-4 bg-white dark:bg-[#1a1d35] px-4 py-2 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-sm font-medium">Disponível para projetos</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Conteúdo textual -->
-            <div class="space-y-6">
-                <div class="space-y-2">
-                    <h4 class="text-lg font-medium text-[#6f5cae] uppercase tracking-wide">I'm Emanuel Malungo</h4>
-                    <h1 class="text-4xl sm:text-5xl font-bold leading-tight">Web Developer</h1>
-                </div>
-
-                <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm">
-                    <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                        I am a web developer with a passion for creating dynamic and responsive websites...
+            <div class="space-y-6 lg:space-y-8">
+                <div class="space-y-3">
+                    <h4 class="text-base lg:text-lg font-medium text-[#6f5cae] uppercase tracking-wide animate-fade-in">
+                        👋 Olá, eu sou Emanuel Malungo
+                    </h4>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
+                        Desenvolvedor Web
+                    </h1>
+                    <p class="text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
+                        Especializado em criar experiências digitais incríveis e responsivas
                     </p>
                 </div>
 
-                <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm">
-                    <h4 class="text-lg font-semibold mb-4">Interests</h4>
-                    <ul class="flex flex-wrap gap-3">
-                        <li
-                            class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-gamepad-line text-lg"></i> Game
-                        </li>
-                        <li
-                            class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-movie-line text-lg"></i> Movies
-                        </li>
-                        <li
-                            class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-music-line text-lg"></i> Music
-                        </li>
-                        <li
-                            class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-book-line text-lg"></i> Books
-                        </li>
-                        <li
-                            class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-plant-line text-lg"></i> Nature
-                        </li>
-                        <li
-                            class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-rocket-line text-lg"></i> Space
-                        </li>
-                    </ul>
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-[#6f5cae] hover:bg-[#5d4a94] text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-2">
+                        <i class="ri-download-line"></i>
+                        Download CV
+                    </button>
+                    <button class="border-2 border-[#6f5cae] text-[#6f5cae] hover:bg-[#6f5cae] hover:text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-2">
+                        <i class="ri-mail-line"></i>
+                        Entrar em Contato
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div class="text-center">
+                        <div class="text-2xl lg:text-3xl font-bold text-[#6f5cae]">2+</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Anos de Experiência</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl lg:text-3xl font-bold text-[#6f5cae]">10+</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Projetos Concluídos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl lg:text-3xl font-bold text-[#6f5cae]">5+</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Tecnologias</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-12 lg:py-16 px-4 lg:px-6 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Sobre mim -->
+                <div class="bg-gray-50 dark:bg-[#1a1d35] p-6 lg:p-8 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 space-y-6">
+                    <h3 class="text-xl lg:text-2xl font-bold text-[#6f5cae] flex items-center gap-2">
+                        <i class="ri-user-heart-line"></i>
+                        Sobre mim
+                    </h3>
+                    <p class="text-base lg:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                        Sou um desenvolvedor web apaixonado por criar soluções digitais inovadoras. Tenho experiência 
+                        em desenvolvimento frontend e backend, sempre focado em entregar produtos de alta qualidade 
+                        que proporcionem excelente experiência ao usuário.
+                    </p>
+                    <p class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                        Atualmente trabalho como freelancer e estudo na 42 School, onde desenvolvo projetos 
+                        desafiadores que me ajudam a crescer como desenvolvedor.
+                    </p>
+                </div>
+
+                <!-- Interesses -->
+                <div class="bg-gray-50 dark:bg-[#1a1d35] p-6 lg:p-8 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 space-y-6">
+                    <h4 class="text-xl lg:text-2xl font-bold text-[#6f5cae] flex items-center gap-2">
+                        <i class="ri-heart-line"></i>
+                        Interesses
+                    </h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <div class="flex items-center gap-2 bg-white dark:bg-[#0f0f23] p-3 rounded-xl text-sm shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                            <i class="ri-gamepad-line text-[#6f5cae] text-lg"></i> 
+                            <span>Games</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white dark:bg-[#0f0f23] p-3 rounded-xl text-sm shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                            <i class="ri-movie-line text-[#6f5cae] text-lg"></i> 
+                            <span>Filmes</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white dark:bg-[#0f0f23] p-3 rounded-xl text-sm shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                            <i class="ri-music-line text-[#6f5cae] text-lg"></i> 
+                            <span>Música</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white dark:bg-[#0f0f23] p-3 rounded-xl text-sm shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                            <i class="ri-book-line text-[#6f5cae] text-lg"></i> 
+                            <span>Livros</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white dark:bg-[#0f0f23] p-3 rounded-xl text-sm shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                            <i class="ri-plant-line text-[#6f5cae] text-lg"></i> 
+                            <span>Natureza</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white dark:bg-[#0f0f23] p-3 rounded-xl text-sm shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all">
+                            <i class="ri-rocket-line text-[#6f5cae] text-lg"></i> 
+                            <span>Espaço</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- SEÇÃO 2: Experiência -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 py-12 px-6 max-w-6xl mx-auto">
-            <!-- Freelancer -->
-            <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm space-y-4">
-                <div>
-                    <div class="flex justify-between items-center">
-                        <h2 class="text-xl font-semibold text-[#6f5cae]">Freelancer</h2>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">2025 - Present</span>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-400 mt-1">Available for freelance projects</p>
-                </div>
-                <ul class="space-y-2">
-                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>Web
-                            Development</span></li>
-                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>UI/UX
-                            Design</span></li>
-                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>SEO
-                            Optimization</span></li>
-                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>Content
-                            Creation</span></li>
-                </ul>
+        <section id="experience" class="py-12 lg:py-16 px-4 lg:px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Experiência Profissional
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-[#6f5cae] to-[#8b7cb8] mx-auto rounded-full"></div>
             </div>
 
-            <!-- Meetzed -->
-            <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm space-y-4">
-                <div>
-                    <div class="flex justify-between items-center">
-                        <h2 class="text-xl font-semibold text-[#6f5cae]">Meetzed</h2>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">2024 - 2025</span>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Freelancer -->
+                <div class="bg-white dark:bg-[#1a1d35] p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-[#6f5cae] to-[#8b7cb8] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="ri-briefcase-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-[#6f5cae]">Freelancer</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Desenvolvedor Web</p>
+                            </div>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                            2025 - Presente
+                        </span>
                     </div>
-                    <p class="text-gray-600 dark:text-gray-400 mt-1">Collaborated in a real-time meeting app development
+                    
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        Desenvolvimento de soluções web personalizadas para diversos clientes, focando em performance, 
+                        SEO e experiência do usuário.
                     </p>
+
+                    <div class="space-y-3">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Serviços oferecidos:</h4>
+                        <div class="grid grid-cols-1 gap-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-[#6f5cae] rounded-full"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Desenvolvimento Web Frontend</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-[#6f5cae] rounded-full"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Design UI/UX</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-[#6f5cae] rounded-full"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Otimização SEO</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-[#6f5cae] rounded-full"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Criação de Conteúdo</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <ul class="space-y-2">
-                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>Realtime
-                            Messaging</span></li>
-                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>WebSockets &
-                            Socket.io</span></li>
-                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>TailwindCSS
-                            Components</span></li>
-                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>Authentication
-                            System</span></li>
-                </ul>
+
+                <!-- Meetzed -->
+                <div class="bg-white dark:bg-[#1a1d35] p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <i class="ri-team-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl lg:text-2xl font-bold text-green-600">Meetzed</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Desenvolvedor Frontend</p>
+                            </div>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                            2024 - 2025
+                        </span>
+                    </div>
+                    
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        Colaboração no desenvolvimento de aplicativo de reuniões em tempo real, implementando 
+                        funcionalidades de chat, vídeo conferência e interface de usuário moderna.
+                    </p>
+
+                    <div class="space-y-3">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Tecnologias utilizadas:</h4>
+                        <div class="grid grid-cols-1 gap-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Mensagens em Tempo Real</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span class="text-gray-700 dark:text-gray-300">WebSockets & Socket.io</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span class="text-gray-700 dark:text-gray-300">TailwindCSS Components</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span class="text-gray-700 dark:text-gray-300">Sistema de Autenticação</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Skills & Education Section -->
+        <section id="skills" class="py-12 lg:py-16 px-4 lg:px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Habilidades & Formação
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-[#6f5cae] to-[#8b7cb8] mx-auto rounded-full"></div>
+            </div>
 
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Skills -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-[#6f5cae] flex items-center gap-2 mb-6">
+                        <i class="ri-code-line"></i>
+                        Tecnologias
+                    </h3>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 py-12 px-6 max-w-6xl mx-auto">
-            <!-- Skills -->
-            <div class="space-y-4">
-                <h2 class="text-xl font-semibold text-[#6f5cae]">Skills</h2>
-
-                <!-- Skill Card -->
-                <div class="bg-gray-100 dark:bg-[#1f2235] p-4 rounded-xl shadow-sm">
-                    <div class="flex justify-between mb-1">
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">HTML</span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">90%</span>
+                    <!-- Skill Card -->
+                    <div class="bg-white dark:bg-[#1a1d35] p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center gap-3">
+                                <i class="ri-html5-line text-2xl text-orange-500"></i>
+                                <span class="font-medium text-gray-900 dark:text-white">HTML5</span>
+                            </div>
+                            <span class="text-sm font-bold text-[#6f5cae]">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-[#6f5cae] to-[#8b7cb8] h-3 rounded-full w-[90%] transition-all duration-1000 ease-out"></div>
+                        </div>
                     </div>
-                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
-                        <div class="bg-[#6f5cae] h-2 rounded-full w-[90%]"></div>
+
+                    <div class="bg-white dark:bg-[#1a1d35] p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center gap-3">
+                                <i class="ri-css3-line text-2xl text-blue-500"></i>
+                                <span class="font-medium text-gray-900 dark:text-white">CSS3</span>
+                            </div>
+                            <span class="text-sm font-bold text-[#6f5cae]">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-[#6f5cae] to-[#8b7cb8] h-3 rounded-full w-[85%] transition-all duration-1000 ease-out"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#1a1d35] p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center gap-3">
+                                <i class="ri-javascript-line text-2xl text-yellow-500"></i>
+                                <span class="font-medium text-gray-900 dark:text-white">JavaScript</span>
+                            </div>
+                            <span class="text-sm font-bold text-[#6f5cae]">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-[#6f5cae] to-[#8b7cb8] h-3 rounded-full w-[80%] transition-all duration-1000 ease-out"></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-[#1a1d35] p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex items-center gap-3">
+                                <i class="ri-tailwind-css-line text-2xl text-cyan-500"></i>
+                                <span class="font-medium text-gray-900 dark:text-white">TailwindCSS</span>
+                            </div>
+                            <span class="text-sm font-bold text-[#6f5cae]">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="bg-gradient-to-r from-[#6f5cae] to-[#8b7cb8] h-3 rounded-full w-[75%] transition-all duration-1000 ease-out"></div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Skills Tags -->
+                    <div class="pt-6">
+                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Outras Tecnologias</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg text-sm font-medium border dark:border-gray-700">React</span>
+                            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg text-sm font-medium border dark:border-gray-700">Node.js</span>
+                            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg text-sm font-medium border dark:border-gray-700">Git</span>
+                            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg text-sm font-medium border dark:border-gray-700">C</span>
+                            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-lg text-sm font-medium border dark:border-gray-700">C++</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-100 dark:bg-[#1f2235] p-4 rounded-xl shadow-sm">
-                    <div class="flex justify-between mb-1">
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">CSS</span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">85%</span>
-                    </div>
-                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
-                        <div class="bg-[#6f5cae] h-2 rounded-full w-[85%]"></div>
-                    </div>
-                </div>
+                <!-- Educação -->
+                <div class="bg-white dark:bg-[#1a1d35] p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 space-y-8">
+                    <h3 class="text-2xl font-bold text-[#6f5cae] flex items-center gap-2">
+                        <i class="ri-graduation-cap-line"></i>
+                        Formação
+                    </h3>
 
-                <div class="bg-gray-100 dark:bg-[#1f2235] p-4 rounded-xl shadow-sm">
-                    <div class="flex justify-between mb-1">
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">JavaScript</span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">80%</span>
-                    </div>
-                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
-                        <div class="bg-[#6f5cae] h-2 rounded-full w-[80%]"></div>
-                    </div>
-                </div>
+                    <!-- Timeline Education -->
+                    <div class="space-y-8">
+                        <!-- 42 School -->
+                        <div class="relative pl-8 border-l-2 border-[#6f5cae]">
+                            <div class="absolute -left-2 top-0 w-4 h-4 bg-[#6f5cae] rounded-full"></div>
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-lg font-bold text-gray-900 dark:text-white">42 School</h4>
+                                    <span class="text-sm text-[#6f5cae] font-medium bg-[#6f5cae]/10 px-3 py-1 rounded-full">
+                                        2023 - Presente
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Programa intensivo de engenharia de software com foco em C, C++, design de sistemas 
+                                    e projetos do mundo real. Metodologia peer-to-peer e aprendizado prático.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-3">
+                                    <span class="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">C/C++</span>
+                                    <span class="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded">Algoritmos</span>
+                                    <span class="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-1 rounded">Sistemas Unix</span>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="bg-gray-100 dark:bg-[#1f2235] p-4 rounded-xl shadow-sm">
-                    <div class="flex justify-between mb-1">
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">TailwindCSS</span>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">75%</span>
-                    </div>
-                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
-                        <div class="bg-[#6f5cae] h-2 rounded-full w-[75%]"></div>
+                        <!-- High School -->
+                        <div class="relative pl-8 border-l-2 border-gray-300 dark:border-gray-600">
+                            <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-lg font-bold text-gray-900 dark:text-white">Ensino Médio</h4>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400 font-medium bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                                        Concluído em 2020
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Ensino médio concluído com foco em ciências e tecnologia, 
+                                    desenvolvendo bases sólidas em matemática e ciências exatas.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Self-taught Learning -->
+                        <div class="relative pl-8">
+                            <div class="absolute -left-2 top-0 w-4 h-4 bg-orange-500 rounded-full animate-pulse"></div>
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-lg font-bold text-gray-900 dark:text-white">Aprendizado Autodidático</h4>
+                                    <span class="text-sm text-orange-600 dark:text-orange-400 font-medium bg-orange-100 dark:bg-orange-900/30 px-3 py-1 rounded-full">
+                                        Contínuo
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                    Constante aperfeiçoamento através de cursos online, documentação oficial 
+                                    e contribuições para projetos open-source.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-3">
+                                    <span class="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2 py-1 rounded">JavaScript</span>
+                                    <span class="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">React</span>
+                                    <span class="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded">Node.js</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Educação -->
-            <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm space-y-6">
-                <h2 class="text-xl font-semibold text-[#6f5cae]">Education</h2>
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 lg:py-16 px-4 lg:px-6 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Vamos trabalhar juntos?
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Estou sempre aberto a novas oportunidades e projetos interessantes. 
+                    Entre em contato e vamos criar algo incrível!
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-[#6f5cae] to-[#8b7cb8] mx-auto rounded-full mt-6"></div>
+            </div>
 
-                <!-- Item: High School -->
-                <div>
-                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">High School</h3>
-                    <span class="block text-sm text-gray-500 dark:text-gray-400 mb-1">Graduated 2020</span>
-                    <p class="text-gray-600 dark:text-gray-400">
-                        Completed high school studies with a focus on science and technology.
-                    </p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Email -->
+                <a href="mailto:emanuel@exemplo.com" 
+                   class="bg-white dark:bg-[#1a1d35] p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 group text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#6f5cae] to-[#8b7cb8] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="ri-mail-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Email</h3>
+                    <p class="text-gray-600 dark:text-gray-400">emanuel@exemplo.com</p>
+                </a>
 
-                <hr class="border-gray-300 dark:border-gray-700" />
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/emanuel-malungo" target="_blank" rel="noopener noreferrer"
+                   class="bg-white dark:bg-[#1a1d35] p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 group text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="ri-linkedin-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">LinkedIn</h3>
+                    <p class="text-gray-600 dark:text-gray-400">@emanuel-malungo</p>
+                </a>
 
-                <!-- Item: 42 School -->
-                <div>
-                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">42 School</h3>
-                    <span class="block text-sm text-gray-500 dark:text-gray-400 mb-1">2023 - Present</span>
-                    <p class="text-gray-600 dark:text-gray-400">
-                        Intensive software engineering program focusing on C, C++, system design, and real-world
-                        projects.
-                    </p>
-                </div>
-
-                <hr class="border-gray-300 dark:border-gray-700" />
-
-                <!-- Item: Self-taught Learning -->
-                <div>
-                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Self-taught Learning</h3>
-                    <span class="block text-sm text-gray-500 dark:text-gray-400 mb-1">Ongoing</span>
-                    <p class="text-gray-600 dark:text-gray-400">
-                        Constantly improving skills via online courses, documentation, and open-source contributions.
-                    </p>
-                </div>
+                <!-- GitHub -->
+                <a href="https://github.com/emanuel-malungo" target="_blank" rel="noopener noreferrer"
+                   class="bg-white dark:bg-[#1a1d35] p-6 lg:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 group text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="ri-github-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">GitHub</h3>
+                    <p class="text-gray-600 dark:text-gray-400">@emanuel-malungo</p>
+                </a>
             </div>
         </section>
     </main>
 
-
     <!-- Menu Flutuante Mobile -->
-    <nav
-        class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-white dark:bg-[#1f2235] border border-gray-300 dark:border-gray-700 shadow-lg rounded-full px-6 py-2 flex items-center justify-between gap-6 z-50 md:hidden">
-        <!-- Home -->
-        <button class="flex flex-col items-center text-sm text-gray-700 dark:text-gray-300 hover:text-[#6f5cae]">
-            <i class="ri-home-5-line text-xl"></i>
-            <span class="text-xs mt-1">Home</span>
-        </button>
+    <nav id="mobile-menu"
+        class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 dark:bg-[#1a1d35]/90 backdrop-blur-md border border-gray-200 dark:border-gray-700 shadow-2xl rounded-2xl px-4 py-3 md:hidden z-50 transition-all duration-300">
+        <div class="flex items-center justify-center gap-1">
+            <!-- Home -->
+            <a href="#home" class="nav-item flex flex-col items-center p-3 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 group">
+                <i class="ri-home-5-line text-xl text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors"></i>
+                <span class="text-xs mt-1 text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors">Home</span>
+            </a>
 
-        <!-- Sobre -->
-        <button class="flex flex-col items-center text-sm text-gray-700 dark:text-gray-300 hover:text-[#6f5cae]">
-            <i class="ri-user-line text-xl"></i>
-            <span class="text-xs mt-1">Sobre</span>
-        </button>
+            <!-- Sobre -->
+            <a href="#about" class="nav-item flex flex-col items-center p-3 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 group">
+                <i class="ri-user-line text-xl text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors"></i>
+                <span class="text-xs mt-1 text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors">Sobre</span>
+            </a>
 
-        <!-- Projetos -->
-        <button class="flex flex-col items-center text-sm text-gray-700 dark:text-gray-300 hover:text-[#6f5cae]">
-            <i class="ri-briefcase-line text-xl"></i>
-            <span class="text-xs mt-1">Projetos</span>
-        </button>
+            <!-- Experiência -->
+            <a href="#experience" class="nav-item flex flex-col items-center p-3 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 group">
+                <i class="ri-briefcase-line text-xl text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors"></i>
+                <span class="text-xs mt-1 text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors">Exp.</span>
+            </a>
 
-        <!-- Contato -->
-        <button class="flex flex-col items-center text-sm text-gray-700 dark:text-gray-300 hover:text-[#6f5cae]">
-            <i class="ri-mail-line text-xl"></i>
-            <span class="text-xs mt-1">Contato</span>
-        </button>
+            <!-- Skills -->
+            <a href="#skills" class="nav-item flex flex-col items-center p-3 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 group">
+                <i class="ri-code-line text-xl text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors"></i>
+                <span class="text-xs mt-1 text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors">Skills</span>
+            </a>
 
-        <!-- Modo Claro/Escuro -->
-        <button id="toggle-theme"
-            class="flex flex-col items-center text-sm text-gray-700 dark:text-gray-300 hover:text-[#6f5cae]">
-            <i class="ri-moon-clear-line text-xl dark:ri-sun-line"></i>
-            <span class="text-xs mt-1">Tema</span>
-        </button>
+            <!-- Contato -->
+            <a href="#contact" class="nav-item flex flex-col items-center p-3 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 group">
+                <i class="ri-mail-line text-xl text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors"></i>
+                <span class="text-xs mt-1 text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors">Contato</span>
+            </a>
+
+            <!-- Divisor -->
+            <div class="w-px h-8 bg-gray-300 dark:bg-gray-600 mx-2"></div>
+
+            <!-- Modo Claro/Escuro -->
+            <button id="toggle-theme-mobile"
+                class="flex flex-col items-center p-3 rounded-xl transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 group">
+                <i id="theme-icon-mobile" class="ri-moon-line text-xl text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors"></i>
+                <span class="text-xs mt-1 text-gray-600 dark:text-gray-400 group-hover:text-[#6f5cae] transition-colors">Tema</span>
+            </button>
+        </div>
     </nav>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 dark:bg-[#1a1d35] border-t border-gray-200 dark:border-gray-700 py-8 mt-16">
+        <div class="container mx-auto px-4 lg:px-6 max-w-7xl">
+            <div class="text-center">
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div class="w-8 h-8 bg-gradient-to-br from-[#6f5cae] to-[#8b7cb8] rounded-lg"></div>
+                    <span class="text-xl font-bold text-[#6f5cae]">Emanuel Malungo</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                    Desenvolvedor Web | Criando experiências digitais incríveis
+                </p>
+                <div class="flex items-center justify-center gap-6 mb-6">
+                    <a href="mailto:emanuel@exemplo.com" class="text-gray-600 dark:text-gray-400 hover:text-[#6f5cae] transition-colors">
+                        <i class="ri-mail-line text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/emanuel-malungo" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-[#6f5cae] transition-colors">
+                        <i class="ri-linkedin-line text-xl"></i>
+                    </a>
+                    <a href="https://github.com/emanuel-malungo" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-[#6f5cae] transition-colors">
+                        <i class="ri-github-line text-xl"></i>
+                    </a>
+                </div>
+                <div class="text-sm text-gray-500 dark:text-gray-500">
+                    © 2025 Emanuel Malungo. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 
