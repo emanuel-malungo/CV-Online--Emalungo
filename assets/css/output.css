@@ -1534,6 +1534,11 @@
       color: var(--color-blue-300);
     }
   }
+  .dark\:text-gray-100 {
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      color: var(--color-gray-100);
+    }
+  }
   .dark\:text-gray-300 {
     &:where([data-theme=dark], [data-theme=dark] *) {
       color: var(--color-gray-300);
