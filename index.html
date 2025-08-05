@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark font-outfit">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     <!-- CDN REMIXICON -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    
+
 
 
     <title>Emalungo | CV online</title>
@@ -20,77 +20,101 @@
 <body class="bg-white dark:bg-[#141520] text-black dark:text-white">
 
     <main class="container mx-auto">
-        <section class="grid grid-cols-1 lg:[grid-template-columns:1fr_2fr] gap-12 py-20 px-6 items-center">
+        <!-- SEÇÃO 1: Perfil com imagem -->
+        <section
+            class="grid grid-cols-1 lg:[grid-template-columns:1fr_2fr] gap-12 py-20 px-6 items-start max-w-6xl mx-auto mt-12">
             <!-- Imagem ou avatar -->
             <div
                 class="h-[300px] sm:h-[400px] rounded-2xl w-full bg-[#6f5cae] shadow-lg flex items-center justify-center">
-                <!-- <img src="..." class="rounded-2xl object-cover h-full w-full" alt="Profile Image" /> -->
                 <span class="text-white text-xl">[Sua imagem]</span>
             </div>
 
             <!-- Conteúdo textual -->
             <div class="space-y-6">
-                <!-- Título -->
                 <div class="space-y-2">
                     <h4 class="text-lg font-medium text-[#6f5cae] uppercase tracking-wide">I'm Emanuel Malungo</h4>
                     <h1 class="text-4xl sm:text-5xl font-bold leading-tight">Web Developer</h1>
                 </div>
 
-                <!-- Parágrafo -->
                 <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm">
                     <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                        I am a web developer with a passion for creating dynamic and responsive websites. I have
-                        experience in HTML, CSS, and JavaScript, and I am always eager to learn new technologies and
-                        improve my skills in web
-                        development. My goal is to build user-friendly and accessible web applications that provide a
-                        great user experience.
+                        I am a web developer with a passion for creating dynamic and responsive websites...
                     </p>
                 </div>
 
-                <!-- Interesses -->
                 <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm">
                     <h4 class="text-lg font-semibold mb-4">Interests</h4>
                     <ul class="flex flex-wrap gap-3">
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-gamepad-line text-lg"></i> Game
-                        </li>
+                            <i class="ri-gamepad-line text-lg"></i> Game</li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-movie-line text-lg"></i> Movies
-                        </li>
+                            <i class="ri-movie-line text-lg"></i> Movies</li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-music-line text-lg"></i> Music
-                        </li>
+                            <i class="ri-music-line text-lg"></i> Music</li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-book-line text-lg"></i> Books
-                        </li>
+                            <i class="ri-book-line text-lg"></i> Books</li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-plant-line text-lg"></i> Nature
-                        </li>
+                            <i class="ri-plant-line text-lg"></i> Nature</li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-rocket-line text-lg"></i> Space
-                        </li>
+                            <i class="ri-rocket-line text-lg"></i> Space</li>
                     </ul>
                 </div>
+            </div>
+        </section>
 
+        <!-- SEÇÃO 2: Experiência -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 py-12 px-6 max-w-6xl mx-auto">
+            <!-- Freelancer -->
+            <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm space-y-4">
+                <div>
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-xl font-semibold text-[#6f5cae]">Freelancer</h2>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">2025 - Present</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-1">Available for freelance projects</p>
+                </div>
+                <ul class="space-y-2">
+                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>Web
+                            Development</span></li>
+                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>UI/UX
+                            Design</span></li>
+                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>SEO
+                            Optimization</span></li>
+                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>Content
+                            Creation</span></li>
+                </ul>
+            </div>
+
+            <!-- Meetzed -->
+            <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm space-y-4">
+                <div>
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-xl font-semibold text-[#6f5cae]">Meetzed</h2>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">2024 - 2025</span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-1">Collaborated in a real-time meeting app development
+                    </p>
+                </div>
+                <ul class="space-y-2">
+                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>Realtime
+                            Messaging</span></li>
+                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>WebSockets &
+                            Socket.io</span></li>
+                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>TailwindCSS
+                            Components</span></li>
+                    <li class="flex items-center gap-2"><i class="ri-check-line text-green-500"></i><span>Authentication
+                            System</span></li>
+                </ul>
             </div>
         </section>
 
 
-
-        <section>
-            <div>
-                <h2>Freelancer</h2>
-            </div>
-            <div>
-                <h2>Meetzed</h2>
-            </div>
-        </section>
 
         <section>
             <div>
