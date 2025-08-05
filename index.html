@@ -47,22 +47,28 @@
                     <ul class="flex flex-wrap gap-3">
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-gamepad-line text-lg"></i> Game</li>
+                            <i class="ri-gamepad-line text-lg"></i> Game
+                        </li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-movie-line text-lg"></i> Movies</li>
+                            <i class="ri-movie-line text-lg"></i> Movies
+                        </li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-music-line text-lg"></i> Music</li>
+                            <i class="ri-music-line text-lg"></i> Music
+                        </li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-book-line text-lg"></i> Books</li>
+                            <i class="ri-book-line text-lg"></i> Books
+                        </li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-plant-line text-lg"></i> Nature</li>
+                            <i class="ri-plant-line text-lg"></i> Nature
+                        </li>
                         <li
                             class="flex items-center gap-2 bg-[#6f5cae] text-white px-4 py-2 rounded-full text-sm shadow hover:scale-105 transition">
-                            <i class="ri-rocket-line text-lg"></i> Space</li>
+                            <i class="ri-rocket-line text-lg"></i> Space
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -116,23 +122,93 @@
 
 
 
-        <section>
-            <div>
-                <div>Skill</div>
-                <div></div>
-                <div></div>
-                <div></div>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 py-12 px-6 max-w-6xl mx-auto">
+            <!-- Skills -->
+            <div class="space-y-4">
+                <h2 class="text-xl font-semibold text-[#6f5cae]">Skills</h2>
+
+                <!-- Skill Card -->
+                <div class="bg-gray-100 dark:bg-[#1f2235] p-4 rounded-xl shadow-sm">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">HTML</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-[#6f5cae] h-2 rounded-full w-[90%]"></div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 dark:bg-[#1f2235] p-4 rounded-xl shadow-sm">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">CSS</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">85%</span>
+                    </div>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-[#6f5cae] h-2 rounded-full w-[85%]"></div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 dark:bg-[#1f2235] p-4 rounded-xl shadow-sm">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">JavaScript</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-[#6f5cae] h-2 rounded-full w-[80%]"></div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 dark:bg-[#1f2235] p-4 rounded-xl shadow-sm">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300">TailwindCSS</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">75%</span>
+                    </div>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-[#6f5cae] h-2 rounded-full w-[75%]"></div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <div>Higth Shool</div>
-                <div></div>
-                <div></div>
+
+            <!-- Educação -->
+            <div class="bg-gray-100 dark:bg-[#1f2235] p-6 rounded-xl shadow-sm space-y-6">
+                <h2 class="text-xl font-semibold text-[#6f5cae]">Education</h2>
+
+                <!-- Item: High School -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">High School</h3>
+                    <span class="block text-sm text-gray-500 dark:text-gray-400 mb-1">Graduated 2020</span>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Completed high school studies with a focus on science and technology.
+                    </p>
+                </div>
+
+                <hr class="border-gray-300 dark:border-gray-700" />
+
+                <!-- Item: 42 School -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">42 School</h3>
+                    <span class="block text-sm text-gray-500 dark:text-gray-400 mb-1">2023 - Present</span>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Intensive software engineering program focusing on C, C++, system design, and real-world
+                        projects.
+                    </p>
+                </div>
+
+                <hr class="border-gray-300 dark:border-gray-700" />
+
+                <!-- Item: Self-taught Learning -->
+                <div>
+                    <h3 class="text-lg font-medium text-gray-800 dark:text-gray-200">Self-taught Learning</h3>
+                    <span class="block text-sm text-gray-500 dark:text-gray-400 mb-1">Ongoing</span>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Constantly improving skills via online courses, documentation, and open-source contributions.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section>
-            <!-- portifolio -->
-        </section>
+
+
     </main>
 
 
