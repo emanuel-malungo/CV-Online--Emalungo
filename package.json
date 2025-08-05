@@ -1,0 +1,26 @@
+{
+  "name": "cv-online--emalungo",
+  "version": "1.0.0",
+  "description": "Currículo online desenvolvido com HTML, TailwindCSS e JavaScript, apresentando minhas informações profissionais, projetos e habilidades como programador freelancer e aluno da 42 Luanda.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emanuel-malungo/CV-Online--Emalungo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emanuel-malungo/CV-Online--Emalungo/issues"
+  },
+  "homepage": "https://github.com/emanuel-malungo/CV-Online--Emalungo#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^4.1.11"
+  }
+}
