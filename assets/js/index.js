@@ -1,4 +1,155 @@
 // ========================================
+// BRIEFING MODAL MANAGEMENT
+// ========================================
+
+class BriefingModal {
+    constructor() {
+        this.modal = document.getElementById('briefing-modal');
+        this.openBtn = document.getElementById('open-briefing-modal');
+        this.closeBtn = document.getElementById('close-briefing-modal');
+        this.cancelBtn = document.getElementById('cancel-briefing');
+        this.backdrop = document.getElementById('modal-backdrop');
+        this.form = document.getElementById('briefing-form');
+        
+        this.init();
+    }
+
+    init() {
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        // Abrir modal
+        if (this.openBtn) {
+            this.openBtn.addEventListener('click', () => this.open());
+        }
+
+        // Fechar modal
+        if (this.closeBtn) {
+            this.closeBtn.addEventListener('click', () => this.close());
+        }
+
+        if (this.cancelBtn) {
+            this.cancelBtn.addEventListener('click', () => this.close());
+        }
+
+        // Fechar modal clicando no backdrop
+        if (this.backdrop) {
+            this.backdrop.addEventListener('click', () => this.close());
+        }
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !this.modal.classList.contains('hidden')) {
+                this.close();
+            }
+        });
+
+        // Submit do formulário
+        if (this.form) {
+            this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        }
+    }
+
+    open() {
+        if (this.modal) {
+            this.modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus no primeiro campo
+            const firstInput = this.modal.querySelector('input[type="text"]');
+            if (firstInput) {
+                setTimeout(() => firstInput.focus(), 100);
+            }
+        }
+    }
+
+    close() {
+        if (this.modal) {
+            this.modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            this.resetForm();
+        }
+    }
+
+    resetForm() {
+        if (this.form) {
+            this.form.reset();
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        
+        // Coleta dados do formulário
+        const formData = new FormData(this.form);
+        const data = Object.fromEntries(formData);
+        
+        // Validação simples
+        if (!this.validateForm(data)) {
+            return;
+        }
+
+        // Simula envio (aqui você pode integrar com uma API)
+        this.submitBriefing(data);
+    }
+
+    validateForm(data) {
+        const requiredFields = ['project-name', 'project-type', 'budget', 'deadline', 'description', 'contact-name', 'contact-email'];
+        
+        for (const field of requiredFields) {
+            if (!data[field] || data[field].trim() === '') {
+                alert(`Por favor, preencha o campo: ${this.getFieldLabel(field)}`);
+                return false;
+            }
+        }
+
+        // Validação de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(data['contact-email'])) {
+            alert('Por favor, insira um e-mail válido');
+            return false;
+        }
+
+        return true;
+    }
+
+    getFieldLabel(fieldName) {
+        const labels = {
+            'project-name': 'Nome do Projeto',
+            'project-type': 'Tipo de Projeto',
+            'budget': 'Orçamento Estimado',
+            'deadline': 'Prazo Desejado',
+            'description': 'Descrição do Projeto',
+            'contact-name': 'Seu Nome',
+            'contact-email': 'Seu E-mail'
+        };
+        return labels[fieldName] || fieldName;
+    }
+
+    submitBriefing(data) {
+        // Simula loading
+        const submitBtn = this.form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Enviando...';
+        submitBtn.disabled = true;
+
+        // Simula envio para o servidor
+        setTimeout(() => {
+            alert('Briefing enviado com sucesso! Entraremos em contato em breve.');
+            this.close();
+            
+            // Restaura botão
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            
+            console.log('Dados do briefing:', data);
+        }, 2000);
+    }
+}
+
+// ========================================
 // THEME MANAGEMENT
 // ========================================
 
@@ -516,6 +667,7 @@ class App {
             this.performanceOptimizer = new PerformanceOptimizer();
             this.interactiveElements = new InteractiveElements();
             this.accessibilityManager = new AccessibilityManager();
+            this.briefingModal = new BriefingModal();
 
             console.log('✅ App initialized successfully');
         } catch (error) {
@@ -536,7 +688,8 @@ window.CVApp = {
     app,
     Utils,
     ThemeManager,
-    NavigationManager
+    NavigationManager,
+    BriefingModal
 };
 
 // Service Worker registration (se disponível)

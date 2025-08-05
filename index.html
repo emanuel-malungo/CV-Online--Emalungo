@@ -17,10 +17,10 @@
     <title>Emanuel Malungo | Desenvolvedor Web</title>
 </head>
 
-<body class="bg-white dark:bg-[#0f0f23] text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<body class="transition-colors duration-300">
 
     <!-- Header Navigation (Desktop) -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-[#0f0f23]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 hidden md:block">
+    <header class="bg-white/80 dark:bg-[#0f0f23]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 hidden md:block">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
@@ -37,6 +37,12 @@
                     <a href="#skills" class="nav-link text-sm font-medium hover:text-[#6f5cae] transition-colors">Habilidades</a>
                     <a href="#contact" class="nav-link text-sm font-medium hover:text-[#6f5cae] transition-colors">Contato</a>
                     
+                    <!-- Briefing Modal Button -->
+                    <button id="open-briefing-modal" 
+                        class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <i class="ri-file-text-line text-lg"></i>
+                    </button>
+                    
                     <!-- Theme Toggle Desktop -->
                     <button id="toggle-theme-desktop" 
                         class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
@@ -47,7 +53,7 @@
         </nav>
     </header>
 
-    <main class="container mx-auto pt-20 md:pt-24">
+    <main class="container mx-auto pt-8 md:pt-12">
         <!-- SEÇÃO 1: Perfil com imagem -->
         <section id="home" 
             class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 py-12 lg:py-20 px-4 lg:px-6 items-center max-w-7xl mx-auto">
@@ -550,6 +556,125 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal de Briefing -->
+    <div id="briefing-modal" class="fixed inset-0 z-50 hidden modal-overlay">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="modal-backdrop"></div>
+        
+        <!-- Modal Content -->
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white dark:bg-[#1a1d35] rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-2xl modal-content">
+                <!-- Header -->
+                <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-[#6f5cae] flex items-center gap-2">
+                        <i class="ri-file-text-line"></i>
+                        Briefing do Projeto
+                    </h2>
+                    <button id="close-briefing-modal" class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                        <i class="ri-close-line text-xl text-gray-600 dark:text-gray-400"></i>
+                    </button>
+                </div>
+                
+                <!-- Content -->
+                <div class="p-6 space-y-6">
+                    <form id="briefing-form" class="space-y-4">
+                        <!-- Nome do Projeto -->
+                        <div>
+                            <label for="project-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Nome do Projeto *
+                            </label>
+                            <input type="text" id="project-name" name="project-name" required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#6f5cae] focus:border-transparent dark:bg-[#0f0f23] dark:text-white transition-all">
+                        </div>
+                        
+                        <!-- Tipo de Projeto -->
+                        <div>
+                            <label for="project-type" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Tipo de Projeto *
+                            </label>
+                            <select id="project-type" name="project-type" required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#6f5cae] focus:border-transparent dark:bg-[#0f0f23] dark:text-white transition-all">
+                                <option value="">Selecione o tipo</option>
+                                <option value="website">Website Institucional</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="webapp">Aplicação Web</option>
+                                <option value="landing">Landing Page</option>
+                                <option value="blog">Blog/Portal</option>
+                                <option value="portfolio">Portfólio</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Orçamento -->
+                        <div>
+                            <label for="budget" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Orçamento Estimado *
+                            </label>
+                            <select id="budget" name="budget" required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#6f5cae] focus:border-transparent dark:bg-[#0f0f23] dark:text-white transition-all">
+                                <option value="">Selecione a faixa</option>
+                                <option value="500-1000">R$ 500 - R$ 1.000</option>
+                                <option value="1000-2500">R$ 1.000 - R$ 2.500</option>
+                                <option value="2500-5000">R$ 2.500 - R$ 5.000</option>
+                                <option value="5000-10000">R$ 5.000 - R$ 10.000</option>
+                                <option value="10000+">R$ 10.000+</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Prazo -->
+                        <div>
+                            <label for="deadline" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Prazo Desejado *
+                            </label>
+                            <input type="date" id="deadline" name="deadline" required
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#6f5cae] focus:border-transparent dark:bg-[#0f0f23] dark:text-white transition-all">
+                        </div>
+                        
+                        <!-- Descrição -->
+                        <div>
+                            <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Descrição do Projeto *
+                            </label>
+                            <textarea id="description" name="description" rows="4" required
+                                placeholder="Descreva detalhadamente o que você precisa..."
+                                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#6f5cae] focus:border-transparent dark:bg-[#0f0f23] dark:text-white transition-all resize-none"></textarea>
+                        </div>
+                        
+                        <!-- Contato -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="contact-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Seu Nome *
+                                </label>
+                                <input type="text" id="contact-name" name="contact-name" required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#6f5cae] focus:border-transparent dark:bg-[#0f0f23] dark:text-white transition-all">
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Seu E-mail *
+                                </label>
+                                <input type="email" id="contact-email" name="contact-email" required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#6f5cae] focus:border-transparent dark:bg-[#0f0f23] dark:text-white transition-all">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Footer -->
+                <div class="flex flex-col sm:flex-row gap-3 px-6 py-4 border-t border-gray-200 dark:border-gray-700">
+                    <button type="button" id="cancel-briefing" 
+                        class="flex-1 px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        Cancelar
+                    </button>
+                    <button type="submit" form="briefing-form"
+                        class="flex-1 bg-[#6f5cae] hover:bg-[#5d4a94] text-white px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+                        <i class="ri-send-plane-line"></i>
+                        Enviar Briefing
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
